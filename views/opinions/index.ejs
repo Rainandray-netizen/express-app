@@ -1,0 +1,16 @@
+<%- include('../partials/header')  %>
+  <main>
+    <div class='reverse-column'>
+      <% if (posts) { posts.forEach((post)=>{ %>
+      
+        <div>
+          <h1>
+            <a href='/opinions/<%= post.id %>'><%= post.content%></a>
+          </h1>
+          <p><%= post.timestamp%></p>
+        </div>
+      
+    <% })}%>
+    </div>
+  </main>
+<%- include('../partials/footer')  %>

@@ -1,0 +1,26 @@
+<%- include('../partials/header')  %>
+  <main>
+    <h1><%= opinion.content %></h1>
+    <p><%= opinion.timestamp %></p>
+    <form method="POST" action="/opinions/<%= opinion.id%>?_method=DELETE">
+      <button type="submit">I hate this post delete it please</button>
+    </form>
+    <p>Leave a proper and respectful comment:</p>
+    <form action='/opinions/<%= opinion.id %>/comment' method='POST'>
+      <input name='content' type='text'>
+      <button>politely reply</button>
+    </form>
+    <div class='reverse-column'>
+      <% opinion.comments.forEach((comment)=>{ %>
+        <div>
+          <h5><%= comment.content %></h5>
+          <p><%= comment.timestamp %></p>
+          <form method="POST" action="/opinions/<%= opinion.id%>/<%= comment.id %>?_method=DELETE">
+            <button type="submit">I hate this comment delete it please</button>
+          </form>
+        </div>
+      <% }) %> 
+    </div>
+    
+  </main>
+<%- include('../partials/footer')  %>

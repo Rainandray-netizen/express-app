@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('./partials/header')  %>
+  <main>
+    <h1 class='title'>All your opinions...</h1>
+    <h1 class='title'>...in one place!</h1>
+    <h1 class='title'>Start posting your terrible opinions today!</h1>
+    <h1 class='title'><a href='/opinions/new-post'>I have terrible opinions to share!</a></h1>
+  </main>
+<%- include('./partials/footer')  %>
